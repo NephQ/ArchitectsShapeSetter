@@ -1,3 +1,9 @@
+
+
+
+
+
+
 package userInterface;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -5,7 +11,7 @@ import java.util.Random;
 import javax.swing.JPanel;
 import java.util.ArrayList;
 import labTasks.*;
-public class PaintPanel extends JPanel {
+public class PaintPanel extends JPanel  {
     private static final long serialVersionUID = 1L;
     private ArrayList <Chair> chairListe = new ArrayList<Chair>();
     private ArrayList <Desk> deskListe = new ArrayList<Desk>();
@@ -31,13 +37,13 @@ public class PaintPanel extends JPanel {
         }// desks x-y values
     }
     @Override
-    public void paint(Graphics g) {
-        Graphics2D graphic2d =  (Graphics2D) g;
+    public void paint(Graphics g2d) {
+        Graphics2D graphic2d =  (Graphics2D) g2d;
         for (Chair chair : chairListe) {
-            chair.paintChair((Graphics2D) g);
+            chair.paintFurniture((Graphics2D) g2d);
         } //chair malen
         for (Desk desk : deskListe) {
-            desk.paintDesk((Graphics2D) g);
+            desk.paintFurniture((Graphics2D) g2d);
         }//desk malen
     }
     public int getRandomValue() {
@@ -45,4 +51,3 @@ public class PaintPanel extends JPanel {
         return random.nextInt(0,700);
     }
 }
-

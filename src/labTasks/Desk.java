@@ -1,19 +1,31 @@
+
+
 package labTasks;
 import java.awt.Color;
 import java.awt.Graphics2D;
-public class Desk {
+public class Desk implements IFurniture {
     private int x;
     private int y;
-    private String farbe;
-    public void setX(int i){this.x=i+100;
+    @Override
+    public void setX(int x) {
+        this.x = x;
     }
-    public int getX (){return this.x;
+    @Override
+    public int getX() {
+        return this.x;
     }
-    public void setY(int i){this.y=i;
+    @Override
+    public void setY(int y) {
+        this.y = y;
     }
-    public int getY (){return this.y;
+    @Override
+    public int getY() {
+        return this.y;
     }
-    public void paintDesk(Graphics2D g2d) {
+
+
+    @Override
+    public void paintFurniture(Graphics2D g2d) {
         maleTischFlaeche(g2d);
         maleTischBeine(g2d);
     }
