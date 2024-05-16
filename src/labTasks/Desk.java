@@ -1,30 +1,7 @@
-
-
 package labTasks;
 import java.awt.Color;
 import java.awt.Graphics2D;
-public class Desk implements IFurniture {
-    private int x;
-    private int y;
-    @Override
-    public void setX(int x) {
-        this.x = x;
-    }
-    @Override
-    public int getX() {
-        return this.x;
-    }
-    @Override
-    public void setY(int y) {
-        this.y = y;
-    }
-    @Override
-    public int getY() {
-        return this.y;
-    }
-
-
-    @Override
+public class Desk extends abstractFurniture {
     public void paintFurniture(Graphics2D g2d) {
         maleTischFlaeche(g2d);
         maleTischBeine(g2d);
