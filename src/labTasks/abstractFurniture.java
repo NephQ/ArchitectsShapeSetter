@@ -9,6 +9,4 @@ public abstract class abstractFurniture implements IFurniture {
     public void setY(int y) {this.y = y;}
     @Override
     public int getY() {return this.y;}
-
-
 }
