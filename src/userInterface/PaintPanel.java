@@ -12,7 +12,6 @@ import labTasks.FurnitureList;
 public class PaintPanel extends JPanel {
     private static final long serialVersionUID = 1L;
     public FurnitureList myFurnitureList = new FurnitureList();
-
     public PaintPanel() {
         int furnitures = getRandomFurnitureNumber();
         for (int i = 0; i < furnitures; i++) {
@@ -26,7 +25,6 @@ public class PaintPanel extends JPanel {
             myFurnitureList.get(i).setY(getRandomValue());
         }
     }
-
     @Override
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -35,19 +33,16 @@ public class PaintPanel extends JPanel {
             furniture.paintFurniture(graphic2d);
         }
     }
-
+    public void shiftAllElements(int mx, int my) {
+        myFurnitureList.shiftAllElements(mx, my);
+        repaint();
+    }
     public int getRandomValue() {
         Random random = new Random();
         return random.nextInt(600);
     }
-
     public int getRandomFurnitureNumber() {
         Random random2 = new Random();
         return random2.nextInt(1,5);
-    }
-
-    public void shift(int mx, int my) {
-        myFurnitureList.shift(mx, my);
-        repaint();
     }
 }

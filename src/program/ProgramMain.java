@@ -15,15 +15,16 @@ public class ProgramMain {
         frame.setSize(1000, 1000);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
+//button wurde erzeugt und mit ActionListener bekommt eine Funktion
         JButton button = new JButton("Switch");
         frame.add(button);
-        button.setVisible(true);
         button.setBounds(450,800,100,100);
+        button.setVisible(true);
 
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                paintPanel.shift(5, 5);  // Shift the furniture by (5, 5)
+                paintPanel.shiftAllElements(5, 5);  // Shift the furniture by (5, 5)
+                paintPanel.repaint();
             }
         });
     }}
