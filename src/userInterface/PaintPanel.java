@@ -1,5 +1,4 @@
 package userInterface;
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.Random;
@@ -8,6 +7,7 @@ import labTasks.IFurniture;
 import labTasks.Chair;
 import labTasks.Desk;
 import labTasks.FurnitureList;
+import labTasks.FurnitureOutOfBorderException;
 
 public class PaintPanel extends JPanel {
     private static final long serialVersionUID = 1L;
@@ -43,6 +43,6 @@ public class PaintPanel extends JPanel {
     }
     public int getRandomFurnitureNumber() {
         Random random2 = new Random();
-        return random2.nextInt(1,5);
+        return random2.nextInt(2,5);
     }
 }
