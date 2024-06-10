@@ -1,10 +1,14 @@
 package labTasks;
-import labTasks.FurnitureOutOfBorderException;
+
 public abstract class abstractFurniture implements IFurniture {
     protected int x;
     protected int y;
-    public void setX(int x) {
-        // if (outOf Bunds) then throw Exception, else
+
+    @Override
+    public void setX(int x) throws FurnitureOutOfBorderException {
+        if (x > 1000 || x < 0) {
+            throw new FurnitureOutOfBorderException("Furniture X coordinate out of border: " + x);
+        }
         this.x = x;
     }
 
@@ -14,8 +18,10 @@ public abstract class abstractFurniture implements IFurniture {
     }
 
     @Override
-
-    public void setY(int y) {
+    public void setY(int y) throws FurnitureOutOfBorderException {
+        if (y > 1000 || y < 0) {
+            throw new FurnitureOutOfBorderException("Furniture Y coordinate out of border: " + y);
+        }
         this.y = y;
     }
 
@@ -24,6 +30,3 @@ public abstract class abstractFurniture implements IFurniture {
         return this.y;
     }
 }
-
-
-

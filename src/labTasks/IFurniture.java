@@ -1,11 +1,13 @@
 package labTasks;
-import java.awt.*;
+
+import java.awt.Graphics2D;
+
 public interface IFurniture {
-    void setX(int x);
+    void setX(int x) throws FurnitureOutOfBorderException;
 
     int getX();
 
-    void setY(int y);
+    void setY(int y) throws FurnitureOutOfBorderException;
 
     int getY();
 
